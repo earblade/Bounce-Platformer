@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_rd5x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwdcf"]
-size = Vector2(647.95, 56.7768)
+size = Vector2(647.997, 52.1067)
 
-[node name="Ground" type="StaticBody2D"]
+[node name="Ground" type="CharacterBody2D" groups=["Movable"]]
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.345098, 0.694118, 0.337255, 1)
-scale = Vector2(648, 56.807)
+position = Vector2(-0.003901, 33.7982)
+scale = Vector2(647.992, 124.403)
 texture = ExtResource("1_rd5x2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.0250092, 0.0168877)
+position = Vector2(-0.00625606, 2.35194)
 shape = SubResource("RectangleShape2D_wwdcf")

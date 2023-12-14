@@ -6,10 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bacn3"]
 size = Vector2(126.95, 12.45)
 
-[node name="Bounce Platform" type="StaticBody2D"]
+[node name="Bounce Platform" type="CharacterBody2D" groups=["Movable"]]
 collision_layer = 4
-constant_linear_velocity = Vector2(0, -500)
-constant_angular_velocity = 0.506145
 script = ExtResource("1_aq1e8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -16,10 +16,10 @@ scale = Vector2(648, 2737)
 texture = ExtResource("1_wyd3b")
 
 [node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
-position = Vector2(323.772, 1128.96)
+position = Vector2(324, 1123.5)
 
 [node name="Player" parent="." instance=ExtResource("1_syo8x")]
-position = Vector2(318.292, 1074.88)
+position = Vector2(324.333, 1050.71)
 collision_mask = 15
 metadata/_edit_group_ = true
 
@@ -36,30 +36,43 @@ editor_draw_drag_margin = true
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Bounce Platform" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(153.207, 989.794)
+position = Vector2(472, 825)
 
 [node name="Bounce Platform2" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(491.874, 874.889)
+position = Vector2(179, 1025)
 
 [node name="Bounce Platform3" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(153.207, 762)
+position = Vector2(332, 935)
 
 [node name="Bounce Platform4" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(483.81, 653.143)
+position = Vector2(289, 733)
 
 [node name="Bounce Platform5" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(155.222, 554.365)
+position = Vector2(438, 648)
 
 [node name="Bounce Platform6" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(483.81, 471.715)
+position = Vector2(92, 320)
+
+[node name="Bounce Platform10" parent="Platforms" instance=ExtResource("4_4mvad")]
+position = Vector2(263, 254)
+
+[node name="Bounce Platform11" parent="Platforms" instance=ExtResource("4_4mvad")]
+position = Vector2(430, 191)
+
+[node name="Bounce Platform12" parent="Platforms" instance=ExtResource("4_4mvad")]
+position = Vector2(560, 118)
+
+[node name="Bounce Platform13" parent="Platforms" instance=ExtResource("4_4mvad")]
+position = Vector2(427, 27)
+
+[node name="Bounce Platform14" parent="Platforms" instance=ExtResource("4_4mvad")]
+position = Vector2(200, -30)
 
 [node name="Bounce Platform7" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(155.222, 352.778)
+position = Vector2(211, 409)
 
 [node name="Bounce Platform8" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(485.826, 278.191)
+position = Vector2(541, 558)
 
 [node name="Bounce Platform9" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(163.286, 173.365)
-
-[connection signal="gravity" from="Player" to="." method="_on_player_gravity"]
+position = Vector2(374, 488)
