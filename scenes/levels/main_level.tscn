@@ -10,13 +10,18 @@ script = ExtResource("1_j57ed")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.454902, 0.682353, 0.772549, 1)
-position = Vector2(324, 155)
-scale = Vector2(648, 3480)
+position = Vector2(324, -216.039)
+scale = Vector2(648, 2737.92)
 texture = ExtResource("1_wyd3b")
-metadata/_edit_lock_ = true
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Ground" parent="Platforms" instance=ExtResource("2_4uqqg")]
+position = Vector2(324, 1100.31)
+scale = Vector2(1, 1.86346)
 
 [node name="Player" parent="." instance=ExtResource("1_syo8x")]
-position = Vector2(282, 198)
+position = Vector2(322.163, 1029.46)
 collision_mask = 15
 metadata/_edit_group_ = true
 
@@ -29,9 +34,3 @@ drag_vertical_enabled = true
 drag_top_margin = 0.41
 drag_bottom_margin = 0.0
 editor_draw_drag_margin = true
-
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="Ground" parent="Platforms" instance=ExtResource("2_4uqqg")]
-position = Vector2(324, 1124)
-metadata/_edit_lock_ = true
