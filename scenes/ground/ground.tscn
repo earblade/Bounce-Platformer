@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://33rddelej5gs"]
+[gd_scene load_steps=4 format=3 uid="uid://33rddelej5gs"]
 
 [ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_rd5x2"]
+[ext_resource type="Script" path="res://scenes/ground/ground.gd" id="1_t7wyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwdcf"]
 size = Vector2(647.997, 52.1067)
 
 [node name="Ground" type="CharacterBody2D" groups=["Movable"]]
 collision_layer = 2
+script = ExtResource("1_t7wyg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.345098, 0.694118, 0.337255, 1)

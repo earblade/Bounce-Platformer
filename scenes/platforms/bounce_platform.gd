@@ -1,3 +1,3 @@
 extends CharacterBody2D
 
-var bounce_speed: int = 200
+var bounce_speed: int = 600

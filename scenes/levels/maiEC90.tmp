@@ -53,9 +53,11 @@ collision_mask = 15
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0.00231934, -0.00708008)
+offset = Vector2(0, -450)
 limit_left = 0
 limit_right = 648
-limit_bottom = 1225
+limit_bottom = 1603
 drag_vertical_enabled = true
+drag_top_margin = 0.41
+drag_bottom_margin = 0.0
 editor_draw_drag_margin = true
