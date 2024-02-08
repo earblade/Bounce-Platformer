@@ -3,57 +3,48 @@ extends Node2D
 var height: int = ProjectSettings.get_setting("display/window/size/viewport_height")
 var width: int = ProjectSettings.get_setting("display/window/size/viewport_width")
 
-@onready var top_margin: float = $Player/Camera2D.drag_top_margin
+var basic_platform: PackedScene = preload("res://scenes/platforms/bounce_platform.tscn")
+var platform_distance: int = -120
 
-@onready var offset: int = $Background2.position.x - $Background.position.x - width
-#False means on left side, true means on right side
-var teleport: bool = false
+@onready var camera_offset: Vector2 = $Player/Camera2D.offset
+@onready var player = $Player
+
+var platforms: Array
 
 func _ready():
-	print("offset",offset)
-	print("height",height)
-	print("width",width)
 
-func _on_backwards_tele_body_entered(_body):
-	if not teleport:
-		teleport = true
-		$Player/Camera2D.limit_right = width*2 + offset
-		$Player/Camera2D.limit_left = width + offset
-		$Player.position.y = $Teleports/TeleportPositions/BackwardsTele1Pos.position.y
-		$Player.position.x += width + offset
-		$Player/Camera2D2.make_current()
+	platforms.push_front(basic_platform)
+	spawn_platforms() #using basic platform currently
 
-	else:
-		teleport = false
-		$Player/Camera2D.limit_left = 0
-		$Player/Camera2D.limit_right = width
-		$Player.position.y = $Teleports/TeleportPositions/BackwardsTele2Pos.position.y
-		$Player.position.x -= width + offset
-		$Player/Camera2D.make_current()
+func _process(_delta):
+
+	$Background.global_position.y = player.global_position.y
+
+	# we want to randomly generate platforms in a certain width a certain vertical distance away from each other
 
 
 
-func _on_tele_body_entered(_body):
-	if not teleport:
-		teleport = true
-		$Player/Camera2D2.limit_right = width*2 + offset
-		$Player/Camera2D2.limit_left = width + offset
-		$Player/Camera2D2.limit_bottom = 1000000
-		$Player/Camera2D2.offset.y = -280
+	for platform in $Platforms.get_children():
+		var previous_platform = $Platforms.get_child(platform.get_index()-4)
 
-		$Player.position.y = $Teleports/TeleportPositions/Tele1Pos.position.y
-		$Player.position.x += width + offset
+		var top_platform = $Platforms.get_child((platform.get_index()+15)%20)
+		if platform.global_position.y >= player.global_position.y \
+		and previous_platform.global_position.y >= player.global_position.y:
+			move_platform(previous_platform, top_platform.global_position.y)
 
-		$Player/Camera2D2.make_current()
 
-		await get_tree().process_frame
-		$Player/Camera2D2.offset.y = -450
-#		print("y ",$Player.position.y)
-#		print("x ",$Player.position.x)
-	else:
-		teleport = false
-		$Player/Camera2D.limit_left = 0
-		$Player/Camera2D.limit_right = width
-		$Player.position.y = $Teleports/TeleportPositions/Tele2Pos.position.y
-		$Player.position.x -= width + offset
-		$Player/Camera2D.make_current()
+func move_platform(platform, anchor):
+	var horizontal_range = randf_range(0 + platform.width/2, width - platform.width/2)
+	platform.global_position = Vector2(
+		horizontal_range,
+		anchor + platform_distance)
+
+func spawn_platforms():
+	while $Platforms.get_child_count() < 20: # 20 basic platforms including the ground
+		var platform_scene = basic_platform.instantiate()
+		$Platforms.add_child(platform_scene)
+		move_platform(
+			platform_scene,
+			player.global_position.y + (platform_distance * platform_scene.get_index())
+		)
+

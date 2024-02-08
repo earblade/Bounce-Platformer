@@ -1,33 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://5ilcuaagf2br"]
+[gd_scene load_steps=5 format=3 uid="uid://5ilcuaagf2br"]
 
 [ext_resource type="Script" path="res://scenes/levels/main_level.gd" id="1_j57ed"]
 [ext_resource type="PackedScene" uid="uid://bd1ulxbdkof0q" path="res://scenes/player/player.tscn" id="1_syo8x"]
 [ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_wyd3b"]
 [ext_resource type="PackedScene" uid="uid://33rddelej5gs" path="res://scenes/ground/ground.tscn" id="2_4uqqg"]
-[ext_resource type="PackedScene" uid="uid://bvq17nfxe33do" path="res://scenes/platforms/bounce_platform.tscn" id="4_4mvad"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ssxd"]
-size = Vector2(648, 55.5)
 
 [node name="Main Level" type="Node2D"]
 script = ExtResource("1_j57ed")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.454902, 0.682353, 0.772549, 1)
-position = Vector2(324, 155)
-scale = Vector2(648, 3480)
+position = Vector2(324, -217)
+scale = Vector2(648, 2737.92)
 texture = ExtResource("1_wyd3b")
-metadata/_edit_lock_ = true
 
-[node name="Background2" type="Sprite2D" parent="."]
-modulate = Color(0.454902, 0.682353, 0.772549, 1)
-position = Vector2(979, 155.25)
-scale = Vector2(648, 3479.5)
-texture = ExtResource("1_wyd3b")
-metadata/_edit_lock_ = true
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
+position = Vector2(324, 1099)
 
 [node name="Player" parent="." instance=ExtResource("1_syo8x")]
-position = Vector2(282, 198)
+position = Vector2(322.163, 1029.46)
 collision_mask = 15
 metadata/_edit_group_ = true
 
@@ -35,160 +28,9 @@ metadata/_edit_group_ = true
 offset = Vector2(0, -450)
 limit_left = 0
 limit_right = 648
-limit_bottom = 1603
+limit_bottom = 1602
 drag_vertical_enabled = true
-drag_top_margin = 0.41
-drag_bottom_margin = 0.0
+drag_top_margin = 0.4
+drag_bottom_margin = 0.04
+editor_draw_limits = true
 editor_draw_drag_margin = true
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-offset = Vector2(0, -280)
-limit_left = 0
-limit_right = 648
-limit_bottom = 1603
-drag_vertical_enabled = true
-drag_top_margin = 0.41
-drag_bottom_margin = 0.0
-editor_draw_drag_margin = true
-
-[node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
-position = Vector2(324, 1124)
-metadata/_edit_lock_ = true
-
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="Bounce Platform" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(472, 825)
-
-[node name="Bounce Platform2" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(179, 1025)
-
-[node name="Bounce Platform3" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(332, 935)
-
-[node name="Bounce Platform4" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(289, 733)
-
-[node name="Bounce Platform5" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(438, 648)
-
-[node name="Bounce Platform6" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(92, 320)
-
-[node name="Bounce Platform10" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(263, 254)
-
-[node name="Bounce Platform11" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(430, 191)
-
-[node name="Bounce Platform12" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(560, 118)
-
-[node name="Bounce Platform13" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(427, 27)
-
-[node name="Bounce Platform14" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(200, -30)
-
-[node name="Bounce Platform7" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(211, 409)
-
-[node name="Bounce Platform8" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(541, 558)
-
-[node name="Bounce Platform9" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(374, 488)
-
-[node name="Bounce Platform15" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(955, 1770)
-
-[node name="Bounce Platform16" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1104, 1685)
-
-[node name="Bounce Platform17" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(758, 1357)
-
-[node name="Bounce Platform18" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(877, 1446)
-
-[node name="Bounce Platform19" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1207, 1595)
-
-[node name="Bounce Platform20" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1040, 1525)
-
-[node name="Bounce Platform21" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(915, 1293)
-
-[node name="Bounce Platform22" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1082, 1230)
-
-[node name="Bounce Platform23" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1212, 1157)
-
-[node name="Bounce Platform24" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1079, 1066)
-
-[node name="Bounce Platform25" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(852, 1009)
-
-[node name="Bounce Platform26" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(986, 916)
-
-[node name="Bounce Platform27" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1115, 821)
-
-[node name="Bounce Platform28" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(978, 732)
-
-[node name="Bounce Platform29" parent="Platforms" instance=ExtResource("4_4mvad")]
-position = Vector2(1119, 635)
-
-[node name="Teleports" type="Node2D" parent="."]
-
-[node name="TeleportPositions" type="Node2D" parent="Teleports"]
-
-[node name="Tele2Pos" type="Marker2D" parent="Teleports/TeleportPositions"]
-position = Vector2(324, 1077)
-
-[node name="Tele1Pos" type="Marker2D" parent="Teleports/TeleportPositions"]
-position = Vector2(976, 1039)
-
-[node name="BackwardsTele2Pos" type="Marker2D" parent="Teleports/TeleportPositions"]
-position = Vector2(322, 64)
-
-[node name="BackwardsTele1Pos" type="Marker2D" parent="Teleports/TeleportPositions"]
-position = Vector2(979, 21)
-
-[node name="Tele1" type="Area2D" parent="Teleports"]
-position = Vector2(324, -30)
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/Tele1"]
-shape = SubResource("RectangleShape2D_8ssxd")
-
-[node name="Tele2" type="Area2D" parent="Teleports"]
-position = Vector2(979, -30)
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/Tele2"]
-shape = SubResource("RectangleShape2D_8ssxd")
-
-[node name="BackwardsTele1" type="Area2D" parent="Teleports"]
-position = Vector2(324, 1124)
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/BackwardsTele1"]
-shape = SubResource("RectangleShape2D_8ssxd")
-
-[node name="BackwardsTele2" type="Area2D" parent="Teleports"]
-position = Vector2(979, 1124)
-collision_layer = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/BackwardsTele2"]
-shape = SubResource("RectangleShape2D_8ssxd")
-
-[connection signal="body_entered" from="Teleports/Tele1" to="." method="_on_tele_body_entered"]
-[connection signal="body_entered" from="Teleports/Tele2" to="." method="_on_tele_body_entered"]
-[connection signal="body_entered" from="Teleports/BackwardsTele1" to="." method="_on_backwards_tele_body_entered"]
-[connection signal="body_entered" from="Teleports/BackwardsTele2" to="." method="_on_backwards_tele_body_entered"]
