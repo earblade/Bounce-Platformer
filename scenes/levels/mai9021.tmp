@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://5ilcuaagf2br"]
+[gd_scene load_steps=6 format=3 uid="uid://5ilcuaagf2br"]
 
 [ext_resource type="Script" path="res://scenes/levels/main_level.gd" id="1_j57ed"]
 [ext_resource type="PackedScene" uid="uid://bd1ulxbdkof0q" path="res://scenes/player/player.tscn" id="1_syo8x"]
 [ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_wyd3b"]
 [ext_resource type="PackedScene" uid="uid://33rddelej5gs" path="res://scenes/ground/ground.tscn" id="2_4uqqg"]
 [ext_resource type="Script" path="res://scenes/levels/scripts/AvailablePlatformsComponent.gd" id="3_qyrrr"]
-[ext_resource type="Script" path="res://scenes/levels/PlayablePlatformsComponent.gd" id="4_j7bfo"]
 
-[node name="Main Level" type="Node2D" node_paths=PackedStringArray("playable_platforms", "available_platforms")]
+[node name="Main Level" type="Node2D" node_paths=PackedStringArray("available_platforms")]
 script = ExtResource("1_j57ed")
-playable_platforms = NodePath("PlayablePlatformsComponent")
 available_platforms = NodePath("AvailablePlatformsComponent")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -21,9 +19,7 @@ texture = ExtResource("1_wyd3b")
 [node name="AvailablePlatformsComponent" type="Node2D" parent="."]
 script = ExtResource("3_qyrrr")
 
-[node name="PlayablePlatformsComponent" type="Node2D" parent="." node_paths=PackedStringArray("available_platforms")]
-script = ExtResource("4_j7bfo")
-available_platforms = NodePath("../AvailablePlatformsComponent")
+[node name="Platforms" type="Node2D" parent="."]
 
 [node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
 position = Vector2(324, 1099)

@@ -14,6 +14,10 @@ config/name="Platform Bounce"
 run/main_scene="res://scenes/levels/main_level.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
+[autoload]
+
+GlobalVariables="*res://scenes/globals/global_variables.gd"
+
 [display]
 
 window/size/viewport_width=648

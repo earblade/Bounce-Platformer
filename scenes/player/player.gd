@@ -46,6 +46,8 @@ func _physics_process(delta):
 		velocity.y = initial_velocity(bounce_height + JUMP_HEIGHT + jump_offset())
 
 # so that every super jump gets the same jump height (even at different timings)
+# DOES NOT WORK, just inverses the amount of height you get the earlier you jump
+# eg. earlier timings are rewarded with a higher jump
 func jump_offset() -> float:
 	#s = u*t + 1/2*g*t**2
 	var offset = (
