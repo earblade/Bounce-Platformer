@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://btb8qurhne7vi"]
+
+[ext_resource type="PackedScene" uid="uid://chdwb8fmtuwbs" path="res://scenes/platforms/platform_base.tscn" id="1_p7g05"]
+[ext_resource type="Script" path="res://scenes/platforms/temporary_platform.gd" id="2_dghxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrppx"]
+size = Vector2(128, 12)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lq2qe"]
+load_path = "res://.godot/imported/whitepixel.png-52b744d08fd75cf5cf652eb631ba65ba.ctex"
+
+[node name="temporary_platform" instance=ExtResource("1_p7g05")]
+script = ExtResource("2_dghxo")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_qrppx")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.239216, 0.239216, 0.239216, 1)
+texture = SubResource("CompressedTexture2D_lq2qe")

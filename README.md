@@ -12,6 +12,7 @@ Add a scoring system that improves with the max height travelled + how many plat
 
 - Planning to make it super rediculous by drastically increasing the score, but first comes a basic idea
 
+
 Add a variety of platforms
  - One that increases the bounce height
  - One that gets removed after a small period of time

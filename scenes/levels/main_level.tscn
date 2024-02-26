@@ -14,6 +14,8 @@ position = Vector2(324, -217)
 scale = Vector2(648, 2737.92)
 texture = ExtResource("1_wyd3b")
 
+[node name="AvailablePlatforms" type="Node2D" parent="."]
+
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
@@ -34,3 +36,7 @@ drag_top_margin = 0.4
 drag_bottom_margin = 0.04
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0

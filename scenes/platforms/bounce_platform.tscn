@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/platforms/bounce_platform.gd" id="1_aq1e8"]
 [ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_d80g1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bacn3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyk02"]
 size = Vector2(128, 12)
 
 [node name="Bounce Platform" type="StaticBody2D"]
@@ -17,4 +17,4 @@ texture = ExtResource("1_d80g1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.84774e-06, 3.72529e-08)
-shape = SubResource("RectangleShape2D_bacn3")
+shape = SubResource("RectangleShape2D_wyk02")
