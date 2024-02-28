@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddh1kenk7hsmf"]
+
+[ext_resource type="Script" path="res://scenes/platforms/moving_platform.gd" id="2_oeg67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brbhb"]
+size = Vector2(128, 12)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_puu14"]
+load_path = "res://.godot/imported/whitepixel.png-52b744d08fd75cf5cf652eb631ba65ba.ctex"
+
+[node name="moving_platform" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("2_oeg67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_brbhb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.207843, 0.192157, 1)
+scale = Vector2(128, 12)
+texture = SubResource("CompressedTexture2D_puu14")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]

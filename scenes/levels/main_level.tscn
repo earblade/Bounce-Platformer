@@ -21,9 +21,10 @@ texture = ExtResource("1_wyd3b")
 [node name="AvailablePlatformsComponent" type="Node2D" parent="."]
 script = ExtResource("3_qyrrr")
 
-[node name="PlayablePlatformsComponent" type="Node2D" parent="." node_paths=PackedStringArray("available_platforms")]
+[node name="PlayablePlatformsComponent" type="Node2D" parent="." node_paths=PackedStringArray("available_platforms", "player")]
 script = ExtResource("4_j7bfo")
 available_platforms = NodePath("../AvailablePlatformsComponent")
+player = NodePath("../Player")
 
 [node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
 position = Vector2(324, 1099)

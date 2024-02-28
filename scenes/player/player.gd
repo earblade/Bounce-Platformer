@@ -35,8 +35,9 @@ func _physics_process(delta):
 
 		var platform = collision.get_collider()
 		#bounce when it needs to bounce
-		if "bounce_height" in platform and is_on_floor():
+		if platform is Platform and is_on_floor():
 			bounce_height = platform.bounce_height
+			platform.emit_signal("bounce")
 			velocity.y = initial_velocity(bounce_height)
 			$BounceTiming.start()
 

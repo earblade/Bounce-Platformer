@@ -18,3 +18,5 @@ texture = ExtResource("1_d80g1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.84774e-06, 3.72529e-08)
 shape = SubResource("RectangleShape2D_wyk02")
+
+[connection signal="bounce" from="." to="." method="_on_bounce"]

@@ -18,3 +18,5 @@ shape = SubResource("RectangleShape2D_qrppx")
 [node name="Sprite2D" parent="." index="1"]
 modulate = Color(0.239216, 0.239216, 0.239216, 1)
 texture = SubResource("CompressedTexture2D_lq2qe")
+
+[connection signal="bounce" from="." to="." method="_on_bounce"]
