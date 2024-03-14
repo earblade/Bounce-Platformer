@@ -22,7 +22,7 @@ class_name AvailablePlatformsComponent extends Node2D
 	GlobalVariables.Platform.moving:
 	{
 		"spawnrate": 0,
-		"maxspawnrate": 8,
+		"maxspawnrate": 12,
 		"packedscene": preload("res://scenes/platforms/moving_platform.tscn")
 	}
 }

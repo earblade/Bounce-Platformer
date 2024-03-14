@@ -17,14 +17,16 @@ config/features=PackedStringArray("4.1", "Mobile")
 [autoload]
 
 GlobalVariables="*res://scenes/globals/global_variables.gd"
+WindowSettings="*res://scenes/globals/window_settings.gd"
 
 [display]
 
 window/size/viewport_width=648
 window/size/viewport_height=1152
-window/size/resizable=false
+window/size/window_width_override=162
+window/size/window_height_override=288
+window/stretch/mode="canvas_items"
 window/handheld/orientation=1
-window/vsync/vsync_mode=0
 
 [input]
 

@@ -10,6 +10,13 @@ extends Node2D
 
 func _ready():
 
+	DisplayServer.window_set_size(
+		Vector2(
+			WindowSettings.get_window_width(),
+			WindowSettings.get_window_height()
+		)
+	)
+
 	available_platforms.populate_available_platforms()
 
 	playable_platforms.init_platforms()

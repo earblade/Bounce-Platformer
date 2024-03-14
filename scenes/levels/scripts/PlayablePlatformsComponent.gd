@@ -1,4 +1,5 @@
-class_name PlayablePlatformsComponent extends Node2D
+extends Node2D
+class_name PlayablePlatformsComponent
 
 @export var available_platforms: AvailablePlatformsComponent
 @export var player: CharacterBody2D

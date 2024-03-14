@@ -7,9 +7,8 @@
 [ext_resource type="Script" path="res://scenes/levels/scripts/AvailablePlatformsComponent.gd" id="3_qyrrr"]
 [ext_resource type="Script" path="res://scenes/levels/scripts/PlayablePlatformsComponent.gd" id="4_5ohqq"]
 
-[node name="Main Level" type="Node2D" node_paths=PackedStringArray("playable_platforms", "available_platforms")]
+[node name="Main Level" type="Node2D" node_paths=PackedStringArray("available_platforms")]
 script = ExtResource("1_j57ed")
-playable_platforms = NodePath("PlayablePlatformsComponent")
 available_platforms = NodePath("AvailablePlatformsComponent")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -17,28 +16,24 @@ modulate = Color(0.454902, 0.682353, 0.772549, 1)
 position = Vector2(324, -217)
 scale = Vector2(648, 2737.92)
 texture = ExtResource("1_wyd3b")
-metadata/_edit_lock_ = true
 
 [node name="AvailablePlatformsComponent" type="Node2D" parent="."]
 script = ExtResource("3_qyrrr")
-metadata/_edit_lock_ = true
 
 [node name="PlayablePlatformsComponent" type="Node2D" parent="." node_paths=PackedStringArray("available_platforms", "player")]
 script = ExtResource("4_5ohqq")
 available_platforms = NodePath("../AvailablePlatformsComponent")
 player = NodePath("../Player")
-metadata/_edit_lock_ = true
+max_platforms = null
+platform_distance = null
 
 [node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
 position = Vector2(324, 1099)
-scale = Vector2(1.19469, 1.02497)
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_syo8x")]
-position = Vector2(323.004, 1025.26)
+position = Vector2(322.163, 1029.46)
 collision_mask = 15
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -450)
@@ -54,13 +49,3 @@ editor_draw_drag_margin = true
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="Wall1" parent="." instance=ExtResource("2_4uqqg")]
-position = Vector2(744.979, 870.672)
-rotation = 1.57079
-scale = Vector2(0.639794, 0.792302)
-
-[node name="Wall2" parent="." instance=ExtResource("2_4uqqg")]
-position = Vector2(-82.7087, 877.808)
-rotation = 1.57079
-scale = Vector2(0.639794, 0.792302)
