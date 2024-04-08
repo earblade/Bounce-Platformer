@@ -32,7 +32,7 @@ func populate_available_platforms() -> void:
 	for platform in platforms:
 		for i in platforms[platform]["spawnrate"]:
 			var platform_scene = platforms[platform]["packedscene"].instantiate()
-			platform_scene.global_position = Vector2(-500, 0)
+#			platform_scene.global_position = Vector2(-500, 0)
 			add_child(platform_scene)
 
 func add_platform(platform: GlobalVariables.Platform) -> void:

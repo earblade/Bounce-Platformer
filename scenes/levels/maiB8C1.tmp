@@ -76,7 +76,4 @@ position = Vector2(-82.7087, 877.808)
 rotation = 1.57079
 scale = Vector2(0.639794, 0.792302)
 
-[connection signal="initial_height" from="Player" to="HUD/UI" method="_on_player_initial_height"]
-[connection signal="max_height_change" from="Player" to="HUD/UI" method="_on_player_max_height_change"]
-[connection signal="normal_jump" from="Player" to="HUD/UI" method="_on_player_normal_jump"]
 [connection signal="super_jump" from="Player" to="HUD/UI" method="_on_player_super_jump"]
