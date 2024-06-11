@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 signal normal_jump
 signal super_jump(is_super_bounced)
-signal max_height_change(height)
-signal initial_height(height)
+signal max_height_change()
+#signal initial_height(height)
 
 const SPEED = 300.0
 const JUMP_HEIGHT = -160
@@ -17,13 +17,13 @@ var floor_platform
 
 func _ready():
 	max_height = position.y
-	emit_signal("initial_height", max_height)
+#	emit_signal("initial_height", max_height)
 
 func _physics_process(delta):
 
 	if max_height > position.y:
 		max_height = position.y
-		emit_signal("max_height_change", max_height)
+		emit_signal("max_height_change") #, max_height
 #		GlobalVariables.player_height = position.y
 
 	# Add the gravity.
@@ -50,6 +50,8 @@ func _physics_process(delta):
 		#bounce when it needs to bounce
 		if platform is Platform:
 			floor_platform = platform
+		else:
+			floor_platform = null
 
 	if is_on_floor() and $JumpDebounceTimer.is_stopped() and floor_platform != null:
 		bounce_height = floor_platform.bounce_height

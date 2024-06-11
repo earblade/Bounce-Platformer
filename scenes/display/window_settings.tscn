@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccgvyd3e8glh5"]
+
+[ext_resource type="Script" path="res://scenes/display/window_settings.gd" id="1_gov32"]
+
+[node name="WindowSettings" type="Node2D"]
+script = ExtResource("1_gov32")

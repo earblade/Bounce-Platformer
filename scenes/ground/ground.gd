@@ -1,3 +1,5 @@
-extends Platform
+extends StaticBody2D
 
-func _init():
+class_name Ground
+
+

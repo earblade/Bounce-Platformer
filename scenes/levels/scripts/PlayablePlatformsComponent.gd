@@ -7,7 +7,7 @@ class_name PlayablePlatformsComponent
 @export var max_platforms: int = 20
 @export var platform_distance: int = -120
 
-var bottom_offset: int = max_platforms/5
+var bottom_offset: int = int(max_platforms / floor(5))
 var top_offset: int = max_platforms-bottom_offset-1 #-1 is because get_index()
 													#starts at 1
 var lowest_platform
