@@ -18,9 +18,10 @@ func init_platforms():
 		var platform_scene = spawn_platform()
 		move_platform(
 			platform_scene,
-			player.global_position.y +
+			(player.global_position.y + 5) +
 			(platform_distance * platform_scene.get_index()) - platform_distance
 		)
+#		print("platform_scene.global_position.y: ", platform_scene.global_position.y)
 
 func iterate():
 	for platform in get_children():
@@ -90,6 +91,7 @@ func spawn_platform() -> Platform:
 	add_child(platform)
 
 	if get_child_count() == 1:
+
 		platform.visible = false
 		platform.collision_layer = 0
 		lowest_platform = platform

@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://c50x1jube3h7v"]
+[gd_scene load_steps=30 format=3 uid="uid://c50x1jube3h7v"]
 
 [ext_resource type="Script" path="res://scenes/levels/ui/ui.gd" id="1_gjy63"]
 [ext_resource type="LabelSettings" uid="uid://dpbgb1uuuxkif" path="res://scenes/levels/ui/scorefont.tres" id="2_cslyv"]
+[ext_resource type="Script" path="res://scenes/levels/ui/AnimateScoreComponent.gd" id="3_104rf"]
 [ext_resource type="StyleBox" uid="uid://b8bd3lckf8a5a" path="res://scenes/levels/ui/superjumpbg.tres" id="3_tfm4a"]
 [ext_resource type="Script" path="res://scenes/levels/ui/SuperJump.gd" id="3_vdbdi"]
 [ext_resource type="Script" path="res://scenes/levels/ui/Explosions.gd" id="4_edvvl"]
@@ -233,7 +234,7 @@ _data = {
 "new_sj": SubResource("Animation_6wq7e")
 }
 
-[node name="UI" type="Control" node_paths=PackedStringArray("score")]
+[node name="UI" type="Control" node_paths=PackedStringArray("animateScore")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,9 +242,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gjy63")
-score = NodePath("CenterContainer/Score")
+animateScore = NodePath("Score/AnimateScoreComponent")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Score" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0503472
@@ -253,7 +254,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(324, 104)
 metadata/_edit_use_anchors_ = true
 
-[node name="Score" type="Label" parent="CenterContainer"]
+[node name="ScoreText" type="Label" parent="Score"]
 layout_mode = 2
 auto_translate = false
 theme_override_styles/normal = SubResource("StyleBoxTexture_nqqyv")
@@ -262,6 +263,11 @@ label_settings = ExtResource("2_cslyv")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimateScoreComponent" type="Node2D" parent="Score" node_paths=PackedStringArray("baseUI", "score")]
+script = ExtResource("3_104rf")
+baseUI = NodePath("../..")
+score = NodePath("../ScoreText")
 
 [node name="SuperJump" type="Control" parent="." node_paths=PackedStringArray("animation", "explosions")]
 layout_mode = 1

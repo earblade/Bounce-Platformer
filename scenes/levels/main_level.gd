@@ -20,7 +20,10 @@ func _process(_delta):
 	for platforms in available_platforms.get_children():
 		platforms.global_position.y = $Player.global_position.y + 1000
 
-	if playable_platforms.is_game_over():
-		pass
+	if playable_platforms.is_game_over() and not GlobalVariables.game_over_flag:
+		$GameOver.visible = true
+		$GameOver/GameOverUI/Title/GameOverAnimation.play("TextScrolling")
+		GlobalVariables.game_over_flag = true
+
 
 	playable_platforms.iterate()
