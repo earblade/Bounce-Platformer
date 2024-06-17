@@ -1,0 +1,207 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpqxxhpge2tp4"]
+
+[ext_resource type="Script" path="res://scenes/levels/ui/game_over_ui.gd" id="1_b0ymk"]
+[ext_resource type="StyleBox" uid="uid://b5q6dsiaskdqe" path="res://scenes/levels/ui/uibutton.tres" id="2_gsbjv"]
+
+[sub_resource type="Animation" id="Animation_qtnq5"]
+resource_name = "TextScrolling"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameOverText:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(3, 0.933026),
+"update": 0,
+"values": [Color(0.164706, 0.164706, 0.164706, 0), Color(0.2, 0.282353, 0.498039, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameOverText:theme_override_colors/font_shadow_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(3, 4),
+"update": 0,
+"values": [Color(0.0509804, 0.0509804, 0.0509804, 0), Color(0.215686, 0.443137, 0.435294, 0.168627)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOverText:theme_override_colors/font_outline_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(4, 4),
+"update": 0,
+"values": [Color(0.513726, 0.513726, 0.513726, 0), Color(0.513726, 0.513726, 0.513726, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameOverText:theme_override_constants/shadow_offset_x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-50, -48, -46, -44, -42, -40, -38, -36, -34, -32, -30, -28, -26, -24, -22, -20, -18, -16, -14, -12, -10, -8]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GameOverText:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(-324, 223), Vector2(0, 223)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Try Again:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Quit Game:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tj0i4"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yc65t"]
+_data = {
+"TextScrolling": SubResource("Animation_qtnq5"),
+"default": SubResource("Animation_tj0i4")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtxmh"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.462745, 0.207843, 0.156863, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b0ymk")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 223.0
+offset_bottom = 323.0
+grow_horizontal = 2
+pivot_offset = Vector2(324, 50)
+theme_override_colors/font_color = Color(0.2, 0.282353, 0.498039, 1)
+theme_override_colors/font_shadow_color = Color(0.215686, 0.443137, 0.435294, 0.168627)
+theme_override_colors/font_outline_color = Color(0.513726, 0.513726, 0.513726, 0)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 3
+theme_override_font_sizes/font_size = 70
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="GameOverAnimation" type="AnimationPlayer" parent="Title"]
+libraries = {
+"": SubResource("AnimationLibrary_yc65t")
+}
+
+[node name="Try Again" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202756
+anchor_top = 0.553436
+anchor_right = 0.804608
+anchor_bottom = 0.648922
+pivot_offset = Vector2(195, 55)
+theme_override_colors/font_color = Color(0.415686, 0.521569, 0.792157, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_gsbjv")
+text = "We go again "
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit Game" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.20355
+anchor_top = 0.739691
+anchor_right = 0.803858
+anchor_bottom = 0.835177
+theme_override_colors/font_color = Color(0.517647, 0.215686, 0.227451, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jtxmh")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Try Again" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Quit Game" to="." method="_on_quit_game_pressed"]

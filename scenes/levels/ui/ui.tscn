@@ -1,0 +1,388 @@
+[gd_scene load_steps=30 format=3 uid="uid://c50x1jube3h7v"]
+
+[ext_resource type="Script" path="res://scenes/levels/ui/ui.gd" id="1_gjy63"]
+[ext_resource type="LabelSettings" uid="uid://dpbgb1uuuxkif" path="res://scenes/levels/ui/scorefont.tres" id="2_cslyv"]
+[ext_resource type="Script" path="res://scenes/levels/ui/AnimateScoreComponent.gd" id="3_104rf"]
+[ext_resource type="StyleBox" uid="uid://b8bd3lckf8a5a" path="res://scenes/levels/ui/superjumpbg.tres" id="3_tfm4a"]
+[ext_resource type="Script" path="res://scenes/levels/ui/SuperJump.gd" id="3_vdbdi"]
+[ext_resource type="Script" path="res://scenes/levels/ui/Explosions.gd" id="4_edvvl"]
+[ext_resource type="Texture2D" uid="uid://bk6f0ymen534s" path="res://graphics/explosion-spritesheet.png" id="4_m7bun"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqqyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyc4a"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(142, 100, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eruo"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(213, 100, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evn78"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(284, 100, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yk3p"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(355, 100, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev4kn"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(0, 200, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21xdf"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(71, 200, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41cif"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(142, 200, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8avyk"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(213, 200, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_081b6"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(284, 200, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppa1u"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(0, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j077a"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(71, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khu1h"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(142, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0clsj"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(213, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwjh"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(284, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25oko"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(355, 0, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq7vs"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(0, 100, 71, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4you"]
+atlas = ExtResource("4_m7bun")
+region = Rect2(71, 100, 71, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qq2vc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyc4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eruo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evn78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yk3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev4kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21xdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41cif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8avyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_081b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppa1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j077a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khu1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0clsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25oko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq7vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4you")
+}],
+"loop": false,
+"name": &"default",
+"speed": 28.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fasp4"]
+font_size = 57
+font_color = Color(0.901961, 0.556863, 0, 1)
+outline_size = 8
+outline_color = Color(0.796078, 0.560784, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_6wq7e"]
+resource_name = "new_sj"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SuperJumpLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(0.176, 0.4, 0.4, 0.15),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SuperJumpLabel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 2, -0.5, 2, -0.5),
+"update": 0,
+"values": [0.0, -0.349066, -0.314159, 0.349066, 0.261799]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_sj_colour"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosions:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.46229, 0.0769467),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosions")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Explosions:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rr3ew"]
+_data = {
+"new_sj": SubResource("Animation_6wq7e")
+}
+
+[node name="UI" type="Control" node_paths=PackedStringArray("animateScore")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjy63")
+animateScore = NodePath("Score/AnimateScoreComponent")
+
+[node name="Score" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0503472
+anchor_right = 1.0
+anchor_bottom = 0.136285
+grow_horizontal = 2
+pivot_offset = Vector2(324, 104)
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreText" type="Label" parent="Score"]
+layout_mode = 2
+auto_translate = false
+theme_override_styles/normal = SubResource("StyleBoxTexture_nqqyv")
+text = "0"
+label_settings = ExtResource("2_cslyv")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimateScoreComponent" type="Node2D" parent="Score" node_paths=PackedStringArray("baseUI", "score")]
+script = ExtResource("3_104rf")
+baseUI = NodePath("../..")
+score = NodePath("../ScoreText")
+
+[node name="SuperJump" type="Control" parent="." node_paths=PackedStringArray("animation", "explosions")]
+layout_mode = 1
+anchor_left = 0.160494
+anchor_top = 0.203125
+anchor_right = 0.844136
+anchor_bottom = 0.349826
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(221, 85)
+script = ExtResource("3_vdbdi")
+animation = NodePath("SuperJumpAnim")
+explosions = NodePath("Explosions")
+
+[node name="Explosions" type="Node2D" parent="SuperJump"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("4_edvvl")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(38.4194, 33.8394)
+rotation = -0.358132
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion2" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(123.086, 36.8633)
+rotation = -0.0669479
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion3" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(202.713, 46.9427)
+rotation = 0.0885868
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion4" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(299.475, 40.895)
+rotation = -0.0228827
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion5" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(371.039, 46.9426)
+rotation = 0.393494
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion6" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(68.6575, 138.665)
+rotation = -2.31245
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion7" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(159.372, 144.712)
+rotation = -3.24541
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion8" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(254.118, 145.72)
+rotation = -3.16174
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion9" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(358.943, 147.736)
+rotation = -3.5609
+scale = Vector2(1.545, 1.545)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion10" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(281.332, 88.2681)
+rotation = -4.712
+scale = Vector2(3.57, 3.57)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="Explosion11" type="AnimatedSprite2D" parent="SuperJump/Explosions"]
+position = Vector2(180.539, 84.2363)
+rotation = -7.84426
+scale = Vector2(3.57, 3.57)
+sprite_frames = SubResource("SpriteFrames_qq2vc")
+
+[node name="SuperJumpLabel" type="Label" parent="SuperJump"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.507897
+anchor_top = 0.473371
+anchor_right = 0.507905
+anchor_bottom = 0.473377
+offset_left = -179.998
+offset_top = -49.9995
+offset_right = 177.998
+offset_bottom = 50.9995
+rotation = 0.261799
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(180, 50)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("3_tfm4a")
+text = "SUPER JUMP"
+label_settings = SubResource("LabelSettings_fasp4")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SuperJumpAnim" type="AnimationPlayer" parent="SuperJump"]
+libraries = {
+"": SubResource("AnimationLibrary_rr3ew")
+}
+
+[node name="SuperJumpRef" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 268.0
+offset_right = 509.0
+offset_bottom = 369.0

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6v8m8iy6esxb"]
+
+[ext_resource type="Script" path="res://scenes/levels/main_level.gd" id="1_j57ed"]
+[ext_resource type="PackedScene" uid="uid://bd1ulxbdkof0q" path="res://scenes/player/player.tscn" id="1_syo8x"]
+[ext_resource type="Texture2D" uid="uid://c2by1jgx18gqw" path="res://graphics/whitepixel.png" id="1_wyd3b"]
+[ext_resource type="PackedScene" uid="uid://33rddelej5gs" path="res://scenes/ground/ground.tscn" id="2_4uqqg"]
+[ext_resource type="Script" path="res://scenes/levels/scripts/AvailablePlatformsComponent.gd" id="3_qyrrr"]
+[ext_resource type="Script" path="res://scenes/levels/scripts/PlayablePlatformsComponent.gd" id="4_5ohqq"]
+
+[node name="Main Level" type="Node2D" node_paths=PackedStringArray("available_platforms")]
+script = ExtResource("1_j57ed")
+available_platforms = NodePath("AvailablePlatformsComponent")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.454902, 0.682353, 0.772549, 1)
+position = Vector2(324, -217)
+scale = Vector2(648, 2737.92)
+texture = ExtResource("1_wyd3b")
+
+[node name="AvailablePlatformsComponent" type="Node2D" parent="."]
+script = ExtResource("3_qyrrr")
+
+[node name="PlayablePlatformsComponent" type="Node2D" parent="." node_paths=PackedStringArray("available_platforms", "player")]
+script = ExtResource("4_5ohqq")
+available_platforms = NodePath("../AvailablePlatformsComponent")
+player = NodePath("../Player")
+max_platforms = null
+platform_distance = null
+
+[node name="Ground" parent="." instance=ExtResource("2_4uqqg")]
+position = Vector2(324, 1099)
+
+[node name="Player" parent="." instance=ExtResource("1_syo8x")]
+position = Vector2(322.163, 1029.46)
+collision_mask = 15
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -450)
+limit_left = 0
+limit_right = 648
+limit_bottom = 1602
+drag_vertical_enabled = true
+drag_top_margin = 0.4
+drag_bottom_margin = 0.04
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0

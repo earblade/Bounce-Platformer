@@ -1,9 +1,10 @@
-extends StaticBody2D
+extends Platform
 
-var bounce_height: int = -150
-@onready var width: int = $Sprite2D.scale.x
-@onready var height: int = $Sprite2D.scale.y
+func _init():
+	type = GlobalVariables.Platform.basic
+	bounce_height = -150
+	max_spawn_rate = 20
 
-func _process(_delta):
+
+func _on_bounce():
 	pass
-

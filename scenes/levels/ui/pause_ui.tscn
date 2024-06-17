@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds5ggupks88n"]
+
+[ext_resource type="Script" path="res://scenes/levels/ui/QuitGame.gd" id="1_vfy1g"]
+
+[node name="PauseUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "Hyperspace mode"
+
+[node name="CheckButton2" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="CheckButton3" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Quit game"
+script = ExtResource("1_vfy1g")
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="MarginContainer/VBoxContainer/QuitGame"]
+title = ""
+initial_position = 1
+size = Vector2i(329, 100)
+unresizable = true
+borderless = true
+popup_window = true
+ok_button_text = "Yes, quit"
+dialog_text = "Are you sure you want to quit the game?"
+cancel_button_text = "No, take me back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGame" to="MarginContainer/VBoxContainer/QuitGame" method="_on_pressed"]
+[connection signal="canceled" from="MarginContainer/VBoxContainer/QuitGame/ConfirmationDialog" to="MarginContainer/VBoxContainer/QuitGame" method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="MarginContainer/VBoxContainer/QuitGame/ConfirmationDialog" to="MarginContainer/VBoxContainer/QuitGame" method="_on_confirmation_dialog_confirmed"]

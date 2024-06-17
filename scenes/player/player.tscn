@@ -11,7 +11,7 @@ script = ExtResource("1_qaimg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.839216, 0.933333, 0.2, 1)
-position = Vector2(0, 7.15256e-07)
+position = Vector2(0, 1.78814e-07)
 scale = Vector2(40, 40)
 texture = ExtResource("2_ngrx0")
 
@@ -19,12 +19,12 @@ texture = ExtResource("2_ngrx0")
 visible = false
 shape = SubResource("RectangleShape2D_r1lg0")
 
-[node name="JumpTimer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="JumpDebounceTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
 one_shot = true
 
 [node name="BounceTiming" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.1
 one_shot = true
-
-[connection signal="timeout" from="BounceTiming" to="." method="_on_bounce_timing_timeout"]

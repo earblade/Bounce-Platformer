@@ -1,0 +1,161 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq31fhwcvsyf2"]
+
+[ext_resource type="Script" path="res://scenes/cheats/cheats.gd" id="1_bvvbu"]
+[ext_resource type="Script" path="res://scenes/cheats/ScoreControl.gd" id="2_l4tyi"]
+[ext_resource type="Script" path="res://scenes/cheats/AddRemove10000.gd" id="2_n7ntv"]
+[ext_resource type="Script" path="res://scenes/cheats/AddRemove20000.gd" id="4_4mrjb"]
+
+[node name="Cheats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bvvbu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0817901
+anchor_top = 0.0494792
+anchor_right = 0.929012
+anchor_bottom = 0.926215
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleCenter" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/TitleCenter"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Debug Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreControl" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+script = ExtResource("2_l4tyi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ScoreControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ChangeScoreLabel" type="Label" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Change Score"
+horizontal_alignment = 1
+
+[node name="AddRemove10000" type="CenterContainer" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_n7ntv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10,000"
+
+[node name="Spacer1" type="Control" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "   +   "
+alignment = 0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Remove" type="Button" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer"]
+layout_mode = 2
+text = "   -   "
+
+[node name="AddRemove20000" type="CenterContainer" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_4mrjb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "20,000"
+
+[node name="Spacer1" type="Control" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "   +   "
+alignment = 0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Remove" type="Button" parent="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer"]
+layout_mode = 2
+text = "   -   "
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GeneralCheats" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/GeneralCheats"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "label"
+
+[connection signal="change_score" from="VBoxContainer/HBoxContainer/ScoreControl" to="." method="_on_score_control_change_score"]
+[connection signal="change_score" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000" to="VBoxContainer/HBoxContainer/ScoreControl" method="_on_add_remove_10000_change_score"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer/Add" to="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000" method="_on_add_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000/HBoxContainer/Remove" to="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove10000" method="_on_remove_pressed"]
+[connection signal="change_score" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000" to="VBoxContainer/HBoxContainer/ScoreControl" method="_on_add_remove_20000_change_score"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer/Add" to="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000" method="_on_add_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000/HBoxContainer/Remove" to="VBoxContainer/HBoxContainer/ScoreControl/VBoxContainer/AddRemove20000" method="_on_remove_pressed"]
